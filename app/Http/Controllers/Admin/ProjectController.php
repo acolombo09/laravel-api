@@ -18,7 +18,8 @@ use Illuminate\Support\Facades\Storage;
 class ProjectController extends Controller {
     // INDEX utente admin
     public function index(): View {
-        $projects = Project::all();
+        // $projects = Project::all(); // visualizzazione completa
+        $projects = Project::paginate(3); // visualizzazione con paginazione a 3
 
         return view("admin.projects.index", compact("projects"));
     }

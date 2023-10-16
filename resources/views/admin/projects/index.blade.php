@@ -33,6 +33,12 @@
     <a href=" {{ route('admin.projects.create') }}" class="btn btn-primary">Create New Project</a>
   </div>
 
+  <div class="d-flex justify-content-center">
+    {{-- links() funzione automatica che genera l'html per spostarsi da una pagina all'altra  --}}
+    {{-- grafiche modificate tramite file provider/appserviceprovider--}}
+    {{ $projects->links() }}
+  </div>
+
 </div>
 
 @endsection

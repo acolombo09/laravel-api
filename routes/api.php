@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\ProjectController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+// rotta senza name, non mi serve restituire una view in questo caso
+// inoltre, avendo creato la rotta in questo file, non c'è bisogno di specificare /api
+Route::get("projects", [ProjectController::class, "index"]);

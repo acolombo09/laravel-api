@@ -16,8 +16,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// vecchia rotta solo back-office
+// Route::get('/', function () {
+//     return view('guests.welcome');
+// });
+// nuova rotta che mi ridireziona alla home del front-office
 Route::get('/', function () {
-    return view('guests.welcome');
+    return redirect('http://localhost:5174/');
 });
 
 Route::get('/dashboard', function () {

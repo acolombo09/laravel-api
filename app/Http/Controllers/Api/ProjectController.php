@@ -27,4 +27,9 @@ class ProjectController extends Controller {
         // per la prima rotta sarà /api/projects
     }
 
+    public function show($slug) {
+        $project = Project::where("slug", $slug)->first();
+
+        return response()->json($project);
+    }
 }
